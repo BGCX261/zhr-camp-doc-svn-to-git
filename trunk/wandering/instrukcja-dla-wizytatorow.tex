@@ -1,0 +1,133 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                                      %%
+%%           P R E A M B L E   B E G I N S              %%
+%%                                                      %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper,10pt,notitlepage,twoside]{article}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage[OT4]{fontenc} % http://www.opcode.eu.org/more_advanced/latex/
+\usepackage{latexsym,fancyhdr}
+\usepackage{geometry} % geometria strony - marginesy, ...
+\usepackage{ragged2e} % http://www.tex.ac.uk/cgi-bin/texfaq2html?label=ragright
+\usepackage{wallpaper} % ftp://sunsite.icm.edu.pl/pub/CTAN/macros/latex/contrib/wallpaper/
+\usepackage{textpos}
+\usepackage{indentfirst}
+\usepackage{enumerate}
+\usepackage[pdftex,a4paper=true,colorlinks=true,
+pdftitle={Słówko do wizytatorów},
+pdfsubject={Słówko do wizytatorów},
+pdfauthor={Maciej Lipczynski},
+pdfkeywords={obóz wedrowny rowerowy splyw wizytacja ocena arkusz zhr akcja letnia komisja rewizyjna finanse dokumentacja kwatery porzadek organizacja zywienie wedrówka bezpieczenstwo dzien harmonogram plan program instrukcja wizytatorów},
+pdfpagemode=UseNone,pdfstartview=FitH, pdfhighlight={/N}
+]{hyperref} % nagłowki pdf-a
+
+\newcommand*{\thecheckbox}{\hss$\Box$} % http://newsgroups.derkeiler.com/Archive/Comp/comp.text.tex/2005-08/msg01658.html
+\newenvironment*{checklist}
+{\list{}{%
+\renewcommand*{\makelabel}[1]{\thecheckbox}}}
+{\endlist}
+
+\frenchspacing
+
+%%%
+% Define fonts to use in the headers and footers of the book.
+%%%
+\newcommand{\LHeadFont}{\footnotesize\sf}
+\newcommand{\CHeadFont}{\footnotesize\sf}
+\newcommand{\RHeadFont}{\footnotesize\sf}
+\newcommand{\LFootFont}{\footnotesize\sf}
+\newcommand{\CFootFont}{\footnotesize\sf}
+\newcommand{\RFootFont}{\footnotesize\sf}
+
+%%%
+% Turn on and define fancy page heading/footing definition.
+%%%
+\pagestyle{fancy}
+
+  \renewcommand{\footrulewidth}{0.5pt} %pozioma kreska w stopce
+  \renewcommand{\headrulewidth}{0pt}
+  \fancyhead[LE,RO]{}
+  \fancyhead[CE,CO]{}
+  \fancyhead[RE,LO]{}
+
+\fancyfoot[LE,RO]{\raisebox{4pt}{\thepage}} % lift the page number a little bit
+\fancyfoot[CE,CO]{}
+%\fancyfoot[RE,LO]{\RFootFont ZHR}
+\fancyfoot[RE,LO]{\includegraphics[scale=0.2, keepaspectratio]{zhr.png}}
+
+\title{Słówko do wizytatorów}
+\date{} % no date
+
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=2cm,rmargin=1cm}
+
+%\overfullrule3pt % uncomment to see overfull
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                                      %%
+%%           D O C U M E N T   B E G I N S              %%
+%%                                                      %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\renewcommand{\headwidth}{18cm} % zmiana szerokości nagłówka i stopki na 18cm
+
+\CenterWallPaper{1.0}{net-375-2.jpg} % watermark on every page
+
+%%%
+% Uncomment "\maketitle" statement to make a title (page).
+%%%
+\maketitle
+\thispagestyle{fancy} % this sets the pagestyle for the page with the title as well
+
+Wizytator nie może być osobą przypadkową. Musi być instruktorem w~stopniu co najmniej podharcmistrza, a~jego autorytet z~dziedziny, której dotyczy wizytacja, musi być ugruntowany w~środowisku, z~którego pochodzi. Jego misja jest delikatna i~bardzo ważna dla rozwoju kadr przyszłych obozów, ponieważ wyniki wizytacji trafiają do Chorągwi, gdzie na ich podstawie modyfikuje się programy szkoleń instruktorskich. Subiektywna opinia spisana przez wizytatora jest narzędziem do pracy dla kadry obozu. Zawiera ona komentarze dotyczące obszarów, które trzeba poprawić, zorganizować zupełnie inaczej, a~także pochwały i~wskazania na zagadnienia, które należy utrzymać, a~nawet rozwinąć. Dlatego wyważone, otwarte podejście do kadry i~uczestników wizytowanego obozu jest bardzo ważne, aby wzbudzić zaufanie i~umożliwić szczere rozmowy. Wizytator musi doprowadzić do takiego stanu, aby jeszcze w~trakcie jego pobytu kadra i~uczestnicy uznali, że jest kimś, kto im rzeczywiście pomógł. I~o~tę pomoc tu chodzi, a~nie o~wystawienie oceny obozowi. Wizytator sprawdza wg arkusza wizytacji co się na obozie dzieje i~jak to zostało zorganizowane. Identyfikuje aspekty, które należy poprawić i~doradza kadrze w~jaki sposób może to zrobić. Rozpoznaje również działania ponadprzeciętne, gratuluje kadrze, i~wykorzystuje jako przykłady np.~na szkoleniach.\\
+\\
+Oto lista aspektów, o~których każdy wizytator powinien pamiętać:
+\begin{checklist}
+\item Nie przeszkadzać.
+\item Nie urządzać formalnego ,,nalotu''.
+\item Przebywać na obozie co najmniej 24 godziny.
+\item Przestrzegać regulaminów obozowych.
+\item Nie przesłuchiwać uczestników, bo to stresuje i~burzy plan dnia.
+\item Nie krytykować, być taktownym.
+\item Spływ zwizytować w~kajaku. Na obóz rowerowy pojechać z~rowerem. Obóz wędrowny odwiedzić na nogach.
+\item Chodzić, jeździć lub pływać z~nimi wszędzie.
+\item ,,Spotkać'' obóz na szlaku, nie ujawniać się, obserwować obóz z~niewielkiej odległości, podążać za nim przez jakiś czas.
+\item Jak najwięcej faktów ustalić za pomocą obserwacji.
+\item Podczas wędrówek trzymać się blisko uczestników, po kilka godzin w~każdej grupie.
+\item Porozmawiać z~każdym członkiem kadry, zastępowymi i~uczestnikami.
+\item Uczestniczyć w~grach, zajęciach, przygotowaniu jedzenia, wartach, apelach itd.
+\item Dołożyć się do kasy obozu. Stawka za osobodzień. W~razie odmowy przekonać dyskretnie kwatermistrza.
+\item Wszystkie uwagi omówić na forum rady obozu. Indywidualne uwagi przekazać prywatnie.
+\item Chwalić pomysły warte wyróżnienia, od razu, przy świadkach.
+\item Nawiązać relacje oparte na zaufaniu.
+\item Robić zdjęcia.
+\item Nagrywać gawędy na dyktafon.
+\item W~celu poprawienia kiepskiej atmosfery wejść w~rolę ,,duszy towarzystwa'' i~,,rozkręcić'' towarzystwo.
+\item Po zidentyfikowaniu błędu zaproponować odpowiedniemu instruktorowi pokazanie ,,jak to powinno być''.
+\item Dawać wszystkim dobry przykład swoją postawą.
+\item Spać w~nocy tam gdzie kadra, jeśli nocują pod namiotami --- w~namiocie, jeśli nie ma miejsca to pod chmurką (jeśli są warunki).
+\end{checklist}
+
+Na zakończenie wizytacji trzeba koniecznie zebrać opinie komendanta i~członków kadry o~przeprowadzonej wizytacji, jak i~o~samym wizytatorze. Jest to inna forma ewaluacji sposobu przeprowadzania wizytacji, dzięki której wizytator jest w~stanie zauważyć błędy jakie popełnia, wyciągnąć z~nich wnioski i~uzupełnić powyższą listę.\\
+\\
+Przykładowe opinie dotyczące wizytatora i~samej wizytacji:
+\begin{itemize}
+\item ,,Wizytacja na początku obozu pozwala uniknąć błędów i~zmusza do przemyśleń. Dobry obserwator i~chłodne spojrzenie jest bardzo przydatne.''
+\item ,,Kontrola przeprowadzona w~sposób nietypowy, bardzo dobry. Była integracja między uczestnikami, a~druhem. Nie było sztuczności, udawania. Obie strony bardzo na siebie się otworzyły i~czerpały ze swoich doświadczeń. Takie kontrole możemy mieć! Motywujące!''
+\item ,,Wizytacja powinna być wcześniej, a~nie w~przedostatni dzień obozu.''
+\item ,,Wizytacja obozu wędrownego --- wielkie zaskoczenie! Dobrze, że coś zaczyna się dziać w~tym kierunku.''
+\item ,,Wizytator kocha góry --- właściwa osoba na tę funkcję.''
+\item ,,Wizytacja z~zaskoczenia, ale bardzo sympatyczna i~pomocna. Szkoda, że odbywała się w~pierwszych dniach obozowych, gdy kadra i~uczestnicy jeszcze się ,,docierają''.''
+\end{itemize}
+
+% \mainmatter
+\end{document}
+\bye
+%
+%%%
+% Document ends.
+%%%

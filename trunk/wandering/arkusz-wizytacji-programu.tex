@@ -1,0 +1,226 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                                      %%
+%%           P R E A M B L E   B E G I N S              %%
+%%                                                      %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper,10pt,notitlepage,twoside]{article}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage[OT4]{fontenc} % http://www.opcode.eu.org/more_advanced/latex/
+% \usepackage[polish]{babel}
+% \usepackage[T1]{fontenc}
+\usepackage{latexsym,fancyhdr}
+\usepackage{geometry} % geometria strony - marginesy, ...
+\usepackage{multirow} % http://en.wikibooks.org/wiki/LaTeX/Tables
+\usepackage{xtab} % tables longer than one page: http://tug.ctan.org/tex-archive/macros/latex/contrib/xtab/xtab.pdf
+\usepackage{colortbl} % http://tug.ctan.org/tex-archive/macros/latex/contrib/colortbl/colortbl.pdf
+\usepackage{ragged2e} % http://www.tex.ac.uk/cgi-bin/texfaq2html?label=ragright
+\usepackage{wallpaper} % ftp://sunsite.icm.edu.pl/pub/CTAN/macros/latex/contrib/wallpaper/
+\usepackage{textpos}
+\usepackage[pdftex,a4paper=true,colorlinks=true,
+pdftitle={Arkusz wizytacji-program},
+pdfsubject={Arkusz wizytacji obozu wedrownego-program},
+pdfauthor={Maciej Lipczynski},
+pdfkeywords={obóz wedrowny rowerowy splyw wizytacja ocena arkusz zhr akcja letnia komisja rewizyjna finanse dokumentacja kwatery porzadek organizacja zywienie wedrówka bezpieczenstwo dzien harmonogram plan program},
+pdfpagemode=UseNone,pdfstartview=FitH, pdfhighlight={/N}
+]{hyperref} % nagłowki pdf-a
+%%%
+% Revision Date and Release Date definitions.
+%
+%       \RelDate - The last time this songbook was released.  Set this
+%                  date each time a new release/update of the songbook
+%                  is generated.
+%       \RevDate - The last time a particular song was revised in any
+%                  way.  This command will be renewed inside every
+%                  song.
+%%%
+\newcommand{\RelDate}{30~czerwca,~2006}
+\newcommand{\RevDate}{\today}
+
+\newcommand{\tstrut}{\rule[-32pt]{0cm}{42pt}} % 42 is 52 minus 10, where 10 is the font size from documentclass and 52 is about 1.75cm, the row should have 1.75cm height at least
+
+\frenchspacing
+
+%%%
+% Define fonts to use in the headers and footers of the songbook.
+%%%
+\newcommand{\LHeadFont}{\footnotesize\sf}
+\newcommand{\CHeadFont}{\footnotesize\sf}
+\newcommand{\RHeadFont}{\footnotesize\sf}
+\newcommand{\LFootFont}{\footnotesize\sf}
+\newcommand{\CFootFont}{\footnotesize\sf}
+\newcommand{\RFootFont}{\footnotesize\sf}
+
+%%%
+% Define counter for rows numbers
+%%%
+\newcounter{theproblem} \setcounter{theproblem}{0}
+\newcommand{\problem}{\noindent%
+\refstepcounter{theproblem}\small{\arabic{theproblem}.}
+}
+
+%%%
+% Turn on and define fancy page heading/footing definition.
+%%%
+\pagestyle{fancy}
+
+  \renewcommand{\footrulewidth}{0.5pt} %pozioma kreska w stopce
+  \renewcommand{\headrulewidth}{0pt}
+  \fancyhead[LE,RO]{}
+  \fancyhead[CE,CO]{}
+  \fancyhead[RE,LO]{}
+
+\fancyfoot[LE,RO]{\raisebox{4pt}{\thepage}} % lift the page number a little bit
+\fancyfoot[CE,CO]{}
+%\fancyfoot[RE,LO]{\RFootFont ZHR}
+\fancyfoot[RE,LO]{\includegraphics[scale=0.2, keepaspectratio]{zhr.png}}
+
+\title{Arkusz wizytacji obozu wędrownego --- program}
+\date{} % no date
+
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=2cm,rmargin=1cm}
+
+%\overfullrule3pt % uncomment to see overfull
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                                      %%
+%%           D O C U M E N T   B E G I N S              %%
+%%                                                      %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\renewcommand{\headwidth}{18cm} % zmiana szerokości nagłówka i stopki na 18cm
+
+\CenterWallPaper{1.0}{net-375-2.jpg} % watermark on every page
+
+%%%
+% Uncomment "\maketitle" statement to make a title (page).
+%%%
+\maketitle
+\thispagestyle{fancy} % this sets the pagestyle for the page with the title as well
+
+\begin{textblock*}{20mm}(0mm,-35mm)
+\includegraphics[scale=0.15]{lilijka_opom.jpg}
+\end{textblock*}
+% \thispagestyle{empty}
+
+\tablefirsthead{
+% tabelka nagłówkowa
+\hline
+\multicolumn{2}{|c|}{\small{\textbf{Zagadnienie}}} & \multicolumn{1}{c|}{\small{\textbf{Opis i~wskazówki do oceny}}} & \multicolumn{1}{c}{\small{\textbf{!}}} & \multicolumn{1}{|c|}{\small{\textbf{Uwagi wizytatora}}} \\\shrinkheight{-1.5cm} % may be used after the first \\ in the table to modify the allowed height of the table on that page. Positive values decrease the lenght.
+\hline
+\multicolumn{5}{c}{} \\
+}
+\tablehead{
+\hline
+\multicolumn{2}{|c|}{\small{\textbf{Zagadnienie}}} & \multicolumn{1}{c|}{\small{\textbf{Opis i~wskazówki do oceny}}} & \multicolumn{1}{c}{\small{\textbf{!}}} & \multicolumn{1}{|c|}{\small{\textbf{Uwagi wizytatora}}} \\
+\hline
+\multicolumn{5}{c}{} \\
+}
+\tabletail{\hline}
+\tablelasttail{\hline}
+\xentrystretch{0.0}
+\begin{xtabular}{|p{0.5cm}|p{2.5cm}|p{5.9cm}|p{0.2cm}|p{6.6cm}|}
+% tabelka z punktami do sprawdzenia
+\hline
+\multicolumn{5}{|c|}{\cellcolor[gray]{0.8}\textbf{Realizacja programu}} \\
+\hline
+\hline
+\problem & \RaggedRight{Program} & \emph{Czy program obozu jest realizowany zgodnie z~planem i~harmonogramem?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy oprócz wędrówek dzieje się coś jeszcze?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Wymienić zauważone ,,zajęcia''.} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy uczestnicy obozu nie są zbyt zmęczeni i~nie zasypiają na zajęciach?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy zajęcia są przeprowadzane na odpowiednio wysokim poziomie czy byle jak?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy zakres tematyczny przeprowadzanych zajęć wyczerpuje to co zostało zaplanowane w programie obozu? W jakim stopniu?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy przeprowadzane zajęcia są związane z~celami obozu czy są przypadkowo wybrane?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy zajęcia są ciekawe?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy forma zajęć jest atrakcyjna? Czy są to ,,wykłady''?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Jakie jest zainteresowanie i~zaangażowanie uczestników?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy zostały zawczasu przygotowane ciekawe i~atrakcyjne artefakty i~pomoce do zajęć?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy piosenki, gawędy i~obozowa książka na dobranoc pasują tematycznie do obozu?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy pomyślano zawczasu o~nauce nowych piosenek w~odpowiednim klimacie? Czy przygotowano wydruki z~tekstem i~akordami?} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Program rezerwowy} & \emph{Czy jest przygotowany program rezerwowy na niesprzyjające warunki?} & & \tstrut \\
+\hline
+ & & \emph{Czy został wykorzystany? W~jakich okolicznościach?} & & \tstrut \\\shrinkheight{-1.6cm} % may be used after the first \\ in the table to modify the allowed height of the table on that page. Positive values decrease the lenght.
+\cline{3-5}
+ & & \emph{Jak został zrealizowany i~odebrany przez uczestników?} & & \tstrut \\
+\hline
+\problem & \RaggedRight{System zastępowy} & \emph{Czy na obozie jest wykorzystywany system zastępowy?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy zastępy obozowe to zastępy śródroczne?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Ocenić poziom działania zastępowych. Opisać jakie sprawiają wrażenie i~czy prezentują się na wodzów, za którymi podążają ich zastępy.} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy jest punktacja/rywalizacja zastępów?} & & \\
+\hline
+\problem & \RaggedRight{Cele} & \emph{Sprawdzić czy drużynowy postawił sobie cele w~stosunku do każdego z~uczestników.} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Sprawdzić czy i~jak te cele są realizowane.} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Znajomość uczestników} & \emph{Czy kadra ma rozeznanie wśrod uczestników obozu i~umie scharakteryzować każdego?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Jakie narzędzia metodyczne są używane w~stosunku do uczestników?} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Książka pracy obozu} & \emph{Przeanalizować wpisaną treść.} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Na podstawie tej analizy zwrócić uwagę na ewentualne błędy w~realizacji programu lub podjętych decyzjach.} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Stopnie} & \emph{Ile przyznano stopni na obozie i~jakich?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Opisać obrzędy wykorzystane przy okazji przyznania tych stopni.} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Sprawności} & \emph{Czy uczestnicy mają możliwość i~chętnie zdobywają sprawności na obozie?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Ile przyznano sprawności na obozie?} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Umundurowanie} & \emph{Czy mundury są używane do czegoś jeszcze poza apelami?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Sprawdzić i~ocenić stan umundurowania uczestników i~kadry.} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Techniki harcerskie} & \emph{Jakie jest pokrycie technik harcerskich planem obozu?} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Integracja z~otoczeniem} & \emph{Czy obóz integruje się z~otoczeniem czy przechodzi obojętnie?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy kadra potrafi wykorzystać fakt przypadkowego napotkania lokalnych indywiduów np. rzeźbiarzy ludowych, bardów, poetów, do zapoznania uczestników z~ich działalnością?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy obóz wykonuje jakąkolwiek służbę na rzecz lokalnej społeczności?} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Atmosfera} & \emph{Czy na obozie został stworzony jakiś specyficzny ,,klimat'' np. wodza prowadzącego drużynę swoimi starymi ścieżkami, odkrywającego stare tajemnice czy historie dotyczące drużyny lub inne?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy kadra potrafi i~robi coś spontanicznego czy sztywno trzyma się programu i~harmonogramu? Np. czy wykorzystano nadarzającą się okazję wyjścia na basen, do sauny, term, pijalni wód, zwiedzania bunkrów, kąpieli w~morzu, rzece, jeziorze, pożegnania dnia na dworze --- poza schroniskiem i~zasięgiem świateł, obserwacji nieba z~ciekawymi opowieściami z~tym związanymi, zamówienia fikuśnego jedzenia albo wykonania kulinarnych niespodzianek jak np. gorące kakao na dobranoc albo herbata z~imbirem i~miodem w~zimny dzień?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Jak postępuje praca nad braterstwem i~odpowiedzialnością ,,za drugiego'' harcerza w~kontekście wędrówek?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy jest jakiś temat przewodni obozu? (Nie chodzi o~fabułę.)} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy i~w~jaki sposób kadra wpaja uczestnikom zamiłowanie do gór, wędrówek, spływów, wspinaczki, jazdy na rowerze, zwiedzania itd?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Jak wygląda rozwój duchowy uczestników na obozie? (Nie chodzi o~aspekty religijne, tylko o~rozmowy, przemyślenia i~wnioski dotyczące każdej osoby, jej życia, postępowania itd.)} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy kadra zwraca uczestnikom uwagę na piękno otaczającej przyrody i~wpaja im do świadomości jej wartość i~znaczenie?} & & \tstrut \\
+%\hline
+\end{xtabular}
+% \mainmatter
+\end{document}
+\bye
+%
+%%%
+% Document ends.
+%%%
+

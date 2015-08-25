@@ -1,0 +1,550 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                                      %%
+%%           P R E A M B L E   B E G I N S              %%
+%%                                                      %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper,10pt,notitlepage,twoside]{article}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage[OT4]{fontenc} % http://www.opcode.eu.org/more_advanced/latex/
+% \usepackage[polish]{babel}
+% \usepackage[T1]{fontenc}
+\usepackage{latexsym,fancyhdr}
+\usepackage{geometry} % geometria strony - marginesy, ...
+\usepackage{multirow} % http://en.wikibooks.org/wiki/LaTeX/Tables
+\usepackage{xtab} % tables longer than one page: http://tug.ctan.org/tex-archive/macros/latex/contrib/xtab/xtab.pdf
+\usepackage{colortbl} % http://tug.ctan.org/tex-archive/macros/latex/contrib/colortbl/colortbl.pdf
+\usepackage{ragged2e} % http://www.tex.ac.uk/cgi-bin/texfaq2html?label=ragright
+\usepackage{wallpaper} % ftp://sunsite.icm.edu.pl/pub/CTAN/macros/latex/contrib/wallpaper/
+\usepackage{textpos}
+\usepackage[pdftex,a4paper=true,colorlinks=true,
+pdftitle={Arkusz wizytacji},
+pdfsubject={Arkusz wizytacji obozu wedrownego},
+pdfauthor={Maciej Lipczynski},
+pdfkeywords={obóz wedrowny rowerowy splyw wizytacja ocena arkusz zhr akcja letnia komisja rewizyjna finanse dokumentacja kwatery porzadek organizacja zywienie wedrowka bezpieczenstwo dzien harmonogram plan},
+pdfpagemode=UseNone,pdfstartview=FitH, pdfhighlight={/N}
+]{hyperref} % nagłowki pdf-a
+%%%
+% Revision Date and Release Date definitions.
+%
+%       \RelDate - The last time this songbook was released.  Set this
+%                  date each time a new release/update of the songbook
+%                  is generated.
+%       \RevDate - The last time a particular song was revised in any
+%                  way.  This command will be renewed inside every
+%                  song.
+%%%
+\newcommand{\RelDate}{30~czerwca,~2006}
+\newcommand{\RevDate}{\today}
+
+\newcommand{\tstrut}{\rule[-32pt]{0cm}{42pt}} % 42 is 52 minus 10, where 10 is the font size from documentclass and 52 is about 1.75cm, the row should have 1.75cm height at least
+
+\frenchspacing
+
+%%%
+% Define fonts to use in the headers and footers of the songbook.
+%%%
+\newcommand{\LHeadFont}{\footnotesize\sf}
+\newcommand{\CHeadFont}{\footnotesize\sf}
+\newcommand{\RHeadFont}{\footnotesize\sf}
+\newcommand{\LFootFont}{\footnotesize\sf}
+\newcommand{\CFootFont}{\footnotesize\sf}
+\newcommand{\RFootFont}{\footnotesize\sf}
+
+%%%
+% Define counter for rows numbers
+%%%
+\newcounter{thecategory} \setcounter{thecategory}{0}
+\newcounter{theproblem}[thecategory] \setcounter{theproblem}{0}
+\newcommand{\category}{\noindent%
+\refstepcounter{thecategory}\arabic{thecategory}.
+}
+\newcommand{\problem}{\noindent%
+\refstepcounter{theproblem}\small{\arabic{thecategory}.\arabic{theproblem}.}
+}
+
+%%%
+% Turn on and define fancy page heading/footing definition.
+%%%
+\pagestyle{fancy}
+
+  \renewcommand{\footrulewidth}{0.5pt} %pozioma kreska w stopce
+  \renewcommand{\headrulewidth}{0pt}
+  \fancyhead[LE,RO]{}
+  \fancyhead[CE,CO]{}
+  \fancyhead[RE,LO]{}
+
+\fancyfoot[LE,RO]{\raisebox{4pt}{\thepage}} % lift the page number a little bit
+\fancyfoot[CE,CO]{}
+%\fancyfoot[RE,LO]{\RFootFont ZHR}
+\fancyfoot[RE,LO]{\includegraphics[scale=0.2, keepaspectratio]{zhr.png}}
+
+\title{Arkusz wizytacji obozu wędrownego}
+\date{} % no date
+
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=2cm,rmargin=1cm}
+
+%\overfullrule3pt % uncomment to see overfull
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                                      %%
+%%           D O C U M E N T   B E G I N S              %%
+%%                                                      %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\renewcommand{\headwidth}{18cm} % zmiana szerokości nagłówka i stopki na 18cm
+
+\CenterWallPaper{1.0}{net-375-2.jpg} % watermark on every page
+
+%%%
+% Uncomment "\maketitle" statement to make a title (page).
+%%%
+\maketitle
+\thispagestyle{fancy} % this sets the pagestyle for the page with the title as well
+
+\begin{textblock*}{20mm}(0mm,-35mm)
+\includegraphics[scale=0.15]{lilijka_opom.jpg}
+\end{textblock*}
+% \thispagestyle{empty}
+
+\tablefirsthead{
+% tabelka nagłówkowa
+\multicolumn{5}{@{}p{17cm}@{}}{
+\begin{tabular}{|r|p{11.7cm}|}
+\hline
+Nazwa obozu: & \\\shrinkheight{-2.7cm} % may be used after the first \\ in the table to modify the allowed height of the table on that page. Positive values decrease the lenght.
+\hline
+Drużyny na obozie: & \\
+\hline
+Termin obozu: & \\
+\hline
+Data wizytacji, który dzień obozu: & \\
+\hline
+Miejscowość, miejsce wizytacji: & \\
+\end{tabular}
+} \\
+\hline
+\multicolumn{5}{c}{} \\
+\hline
+\multicolumn{2}{|c|}{\small{\textbf{Zagadnienie}}} & \multicolumn{1}{c|}{\small{\textbf{Opis i~wskazówki do oceny}}} & \multicolumn{1}{c}{\small{\textbf{!}}} & \multicolumn{1}{|c|}{\small{\textbf{Uwagi wizytatora}}} \\
+\hline
+\multicolumn{5}{c}{} \\
+}
+\tablehead{
+\hline
+\multicolumn{2}{|c|}{\small{\textbf{Zagadnienie}}} & \multicolumn{1}{c|}{\small{\textbf{Opis i~wskazówki do oceny}}} & \multicolumn{1}{c}{\small{\textbf{!}}} & \multicolumn{1}{|c|}{\small{\textbf{Uwagi wizytatora}}} \\
+\hline
+\multicolumn{5}{c}{} \\
+}
+\tabletail{\hline}
+\tablelasttail{\hline}
+\xentrystretch{0.0}
+\begin{xtabular}{|p{0.5cm}|p{2.5cm}|p{5.9cm}|p{0.2cm}|p{6.6cm}|}
+% tabelka z punktami do sprawdzenia
+\hline
+\multicolumn{5}{|c|}{\cellcolor[gray]{0.8}\textbf{\category Finanse i~inna dokumentacja}} \\
+\hline
+\hline
+\problem & \RaggedRight{Rachunki i~faktury} & \emph{Czy rachunki są przechowywane w~oddzielnej teczce lub koszulce?} & & \\
+\cline{3-5}
+ & & \emph{Czy są opisane i~ułożone w~kolejności?} & & \\
+\cline{3-5}
+ & & \emph{Czy są zabezpieczone przed zamoknięciem?} & & \\
+\hline
+\problem & \multirow{3}{2.5cm}{\RaggedRight{Kontrola nad stanem finansów obozu}} & \emph{Jak i~przez kogo przechowywana jest gotówka?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy jest używany zeszyt zaliczek?} & & \\
+\cline{3-5}
+ & & \emph{Czy wiadomo ile wydano pieniędzy i~ile zostało do wydania?} & & \\
+\hline
+\problem & \RaggedRight{Książka finansowa} & \emph{Czy książka finansowa jest prowadzona na bieżąco? Sprawdzić czy ewentualne opóźnienie w~prowadzeniu książki finansowej wynosi nie więcej niż dobę.} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Wydatki} & \emph{Sprawdzić czy rzeczywiste wydatki są zgodne z~preliminarzem. Wymienić niezgodne kategorie i~wypisać stopień niezgodności (w~\%).} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Umowy} & \emph{Sprawdzić czy są zrobione rezerwacje wszystkich noclegów.} & & \\
+\cline{3-5}
+ & & \emph{Jeśli są podpisane inne umowy: zlecenia, o~dzieło, najmu terenu, samochodu (z~kartami drogowymi) to skontrolować ich treść i~poprawność formalną.} & & \\
+\hline
+\problem & \RaggedRight{KP} & \emph{Czy kwity potwierdzenia wpłat uczestników zostały wypisane?} & & \\
+\hline
+\problem & \RaggedRight{Karty obozowe} & \emph{Czy wszystkie wymagane części kart obozowych uczestników są wypełnione?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy wszystkie wymagane części kart obozowych osób pełnoletnich są wypełnione?} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Lista uczestników} & \emph{Czy w~dokumentacji są gotowe kopie listy uczestników obozu?} & & \\
+\hline
+\problem & \RaggedRight{Ubezpieczenia zdrowotne} & \emph{Czy w~dokumentacji znajdują się informacje o~ubezpieczeniach zdrowotnych uczestników i~kadry obozu?} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Książka pracy obozu} & \emph{Czy jest wypełniona i~prowadzona na bieżąco książka pracy obozu i~czy zawiera to co powinna --- w~tym rozkazy obozowe?} & & \tstrut \\
+\hline
+%\multicolumn{5}{c}{} \\
+%\hline
+\multicolumn{5}{|c|}{\cellcolor[gray]{0.8}\textbf{\category Kwatery i~porządek}} \\
+\hline
+\hline
+\problem & \RaggedRight{Kwatery} & \emph{Opisać miejsca kwaterowania --- ,,pod chmurką'', szałasy, bacówka, schronisko, pole namiotowe, szkoła (czy dostępne są sale lekcyjne, sala gimnastyczna, korytarz) itp.} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Miejsca noclegów} & \emph{Opisać miejsca noclegów uczestników --- namioty (sprawdzić stan namiotów), sala lekcyjna, sala gimnastyczna, korytarz, pokój lub gleba w~schronisku, itp. Ile osób przydzielono do jednego namiotu /~pomieszczenia.} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Łazienki (umywalnie)} & \emph{Sprawdzić gdzie myją się uczestnicy: w~łazienkach, w~rzece, w~jeziorze itp.} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Standard łazienek (umywalni)} & \emph{Obejrzeć łazienki. Sprawdzić czy jest bieżąca woda --- zimna i~ciepła.} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy i~w~jakich godzinach są dostępne prysznice i~w~jakim są stanie?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Sprawdzić w~jakich godzinach powinna być i~czy faktycznie jest ciepła woda.} & & \\
+\cline{3-5}
+ & & \emph{Czy ciepłej wody wystarcza dla wszystkich?} & & \\
+\hline
+\problem & \RaggedRight{Przestrzeganie zasad higieny} & \emph{Sprawdzić czy uczestnicy dokonują codziennej toalety w~czasie na to przeznaczonym, czy są czyści i~czy odzież jest czysta i sucha?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy czasu na toaletę jest wystarczająco dużo aby każdy z~uczestników zdążył się umyć?} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Porządek i~czystość na obozie} & \emph{Sprawdzić porządek i~czystość w~miejsu zakwaterowania, również w~częściach wspólnych.} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy w~miejscu zakwaterowania wydzielono suszarnię na uprane rzeczy?} & & \\
+\hline
+\problem & \RaggedRight{Kadrówka} & \emph{Czy jest wydzielona kadrówka i czy jest w~niej porządek?} & & \\
+\hline
+\problem & \RaggedRight{,,Pozostałości''} & \emph{Sprawdzić w~jakim stanie harcerze zostawili miejsce kwaterowania. Czy został po nich porządek czy bałagan?} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Część rekreacyjna i~sportowa} & \emph{Czy w~miejscu zakwaterowania są obiekty sportowe lub rekreacyjne, z~których można korzystać? Wymienić jakie i~sprawdzić czy zostało to wykorzystane do zajęć obozowych. Zajęcia sportowe nie są obowiązkowe --- chodzi o~sprawdzenie czy kadra brała pod uwagę atrakcyjność miejsca, czy wybierała to ,,co było wolne'' oraz sytuacje takie jak np. nocleg w~szkole ze świetnym zapleczem sportowym, do którego kadra nie załatwiła dostępu.} & & \tstrut \\
+\hline
+%\multicolumn{5}{c}{} \\
+%\hline
+\multicolumn{5}{|c|}{\cellcolor[gray]{0.8}\textbf{\category Sprawy organizacyjne}} \\
+\hline
+\hline
+\problem & \RaggedRight{Obowiązkowość kadry} & \multicolumn{3}{@{}p{12.7cm}@{}}{\multirow{8}{12.7cm}{\begin{tabular}{p{2.52cm}|p{3.25cm}|p{1.4cm}|p{3.275cm}|p{1.4cm}|}
+\multirow{8}{2.52cm}{\begin{tabular}{@{}p{2.52cm}@{}} \RaggedRight{\emph{Sprawdzić czy każda osoba z~kadry ma wyznaczony zakres obowiązków, jest świadoma co i~kiedy ma robić. W~sąsiedniej tabeli wypisać konkretne obowiązki oraz ocenę jakości i~sposobu ich wykonywania oraz skuteczność w~świetle podejmowanych decyzji. Czy każda osoba z~kadry orientuje się w~planie obozu i~w~dokładnym planie każdego dnia obozowego?}}\\ \end{tabular}} & Zakres \mbox{obowiązków} & Świado- mość & Jakość i~sposób & Skutecz- ność \\
+\cline{2-5}
+ &  &  &  & \tstrut \\
+\cline{2-5}
+ &  &  &  & \tstrut \\
+\cline{2-5}
+ &  &  &  & \tstrut \\
+\cline{2-5}
+ &  &  &  & \tstrut \\
+\cline{2-5}
+ &  &  &  & \tstrut \\
+\cline{2-5}
+ &  &  &  & \tstrut \\
+\cline{2-5}
+ &  &  &  & \tstrut \\
+\end{tabular}}} \\
+\cline{2-2}
+\tstrut & \RaggedRight{Komendant} & \multicolumn{3}{@{}p{12.7cm}@{}}{} \\
+\cline{2-2}
+\tstrut & \RaggedRight{Oboźny} & \multicolumn{3}{@{}p{12.7cm}@{}}{} \\
+\cline{2-2}
+\tstrut & \RaggedRight{Kwatermistrz} & \multicolumn{3}{@{}p{12.7cm}@{}}{} \\
+\cline{2-2}
+\tstrut & \RaggedRight{Zaopatrzenie} & \multicolumn{3}{@{}p{12.7cm}@{}}{} \\
+\cline{2-2}
+\tstrut & \RaggedRight{Pielęgniarka} & \multicolumn{3}{@{}p{12.7cm}@{}}{} \\
+\cline{2-2}
+\tstrut & \RaggedRight{Ratownik} & \multicolumn{3}{@{}p{12.7cm}@{}}{} \\
+\cline{2-2}
+\tstrut & \RaggedRight{Przewodnik} & \multicolumn{3}{@{}p{12.7cm}@{}}{} \\
+\hline
+\problem & \RaggedRight{Służby obozowe} & \emph{Czy są jakiekolwiek służby obozowe? Jeśli tak --- to jakie?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Jaki mają zakres obowiązków?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy istnieje ustalony grafik kto kiedy pełni jaką służbę?} & & \\
+\cline{3-5}
+ & & \emph{Kiedy (na ile wcześniej) uczestnicy dowiadują się o~swojej służbie?} & & \\
+\hline
+\problem & \RaggedRight{Zwiad kwatermistrzowski} & \emph{W~jaki sposób wybrano trasę obozu i~miejsca zakwaterowania?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy był zwiad kwatermistrzowski na miejscu? Jeśli tak, to ustalić kiedy i~ile trwał.} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Kto wchodził w~skład zwiadu?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Co udało się załatwić a~czego nie?} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Przygotowanie kadry} & \emph{Sprawdzić czy kadra jest odpowiednio przygotowana do prowadzenia obozu tego typu. Np. czy kadra ma wiedzę o~górach po których wędrują, rzece, po której płyną, regionie przez który jadą?} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Punkty GOT, TOK, KOT itp.} & \emph{Czy uczestnicy obozu mają książki wycieczek PTTK i~zbierają do nich potwierdzenia pobytu?} & & \\
+\hline
+\problem & \RaggedRight{Atmosfera i~samopoczucie} & \emph{Ocenić jak obóz się prezentuje jako taki. Jakie są: atmosfera, odczucia i~nastroje wśród uczestników i~kadry?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Jakie są relacje między kadrą a~uczestnikami?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy są jakieś konflikty wśród kadry?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Jeśli tak, to w~jaki sposób, gdzie i~kiedy są rozwiązywane?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy ekipa jest zintegrowana, rozśpiewana, zgodna?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy na szlaku uczestnicy rozmawiają ze sobą czy idą w~milczeniu itd?} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Atrakcyjność} & \emph{Jest ciekawie czy nudno? Czy obóz można uznać za atrakcyjny, ciekawy?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy kadra wykorzystuje walory okolic, które obóz przemierza (turystyczne, krajoznawcze, etnograficzne)?} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Ciekawostki} & \emph{Czy kadra obozu zdecydowała się na coś ciekawego, nieplanowanego, spektakularnego, nieoczekiwanego, itp. korzystając z~nadarzającej się okazji, o~czym warto wspomnieć?} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Rodzaj obozu} & \emph{Ocenić czy rodzaj obozu jest dostosowany do możliwości drużyny? Czy drużyna przeceniła swoje siły? Czy lepiej by było gdyby drużyna pojechała na obóz wędrowny pod namiotami, z~noclegami w~bazach, schroniskach, ze stałą bazą z~wycieczkami itd?} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Podsumowanie i~ewaluacja obozu} & \emph{Dowiedzieć się czy są planowane, kiedy, gdzie i~w~jakiej formie.} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Uczestnicy wymagający szczególnej uwagi} & \emph{Jak kadra radzi sobie z~osobami wymagającymi szczególnej uwagi, jeśli są takie wśród uczestników? Np. takimi, które są pierwszy raz na obozie wędrownym lub takimi, które nie radzą sobie kondycyjnie i~psychicznie, sprawiającymi trudności wychowawcze itp.} & & \tstrut \\
+\hline
+%\multicolumn{5}{c}{} \\
+%\hline
+\multicolumn{5}{|c|}{\cellcolor[gray]{0.8}\textbf{\category Żywienie}} \\
+\hline
+\hline
+\problem & \RaggedRight{Zakupy żywności} & \emph{Przyjrzeć się zakupom żywności, tzn. ocenić czy obóz mądrze planuje czego potrzebuje na kolejne dni i~co musi zabrać ze sobą, żeby uniknąć nagłego wysyłania ekipy do pobliskich miejscowości w~poszukiwaniu brakujących produktów.} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Wyżywienie podczas wędrówki} & \emph{Jak wygląda wyżywienie uczestników na szlaku?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Kto i~kiedy przygotowuje żywność na drogę?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Co wchodzi w~skład prowiantu?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy jest go wystarczająca ilość?} & & \\
+\cline{3-5}
+ & & \emph{Czy uczestnicy spożywają przygotowany prowiant czy na własną rękę żywią się słodyczami w~napotkanych sklepach?} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Napoje} & \emph{Czy ilość napojów w~ciągu dnia jest wystarczająca? Ile litrów napojów każdy uczestnik ma ze sobą w~trakcie wędrówki?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy uczestnicy dokupują napoje za własne pieniądze? Jeśli tak, to ocenić jaka jest skala tego zjawiska i~uwzględnić przy ocenianiu stawki żywieniowej.} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy uczestnicy piją tylko wodę i~herbatę czy także inne napoje, w~tym uzupełniające elektrolity? Wymienić co to są za napoje.} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy kadra kontroluje czy i~kiedy są wypijane w~trakcie wędrówki?} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Stawka żywieniowa} & \emph{Czy obóz ,,oszczędza'' na jedzeniu i~napojach? Czy faktyczne wydatki na wyżywienie pokrywają się z~zaplanowanymi w~preliminarzu? Na czym polegają te ewentualne ,,oszczędności''.} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Warunki przechowywania żywności} & \emph{W~jakich warunkach przechowywana jest żywność w~miejscach zakwaterowania, a~w~szczególności podczas wędrówek? Sprawdzić czy warunki te nie narażają uczestników na spożycie zepsutej żywności, np. sfermentowanych soków, zjełczałego masła itp.} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Warunki i~sposób przygotowywania posiłków} & \emph{Czy posiłki są przygotowywane samodzielnie czy obóz korzysta z~punktów gastronomicznych? Jeśli samodzielnie to ocenić warunki sanitarne, zdolności kucharza, pracę zastępu kuchennego, sprawdzić kto kieruje przygotowaniami, kto kontroluje, kto wykonuje.} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Terminowość wydawania posiłków} & \emph{Czy posiłki są wydawane o~czasie wynikającym z~rozkładu danego dnia obozowego, jakie są ewentualne opóźnienia i~czym spowodowane?} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Zgodność posiłków z~jadłospisem} & \emph{Czy posiłki spełniają normy żywienia właściwe dla specyfiki obozu wędrownego (czy są bogate w~potas i~magnez)? Jeśli żywienie jest w~punktach gastronomicznych to ocenić objętość oraz jakość potraw.} & & \tstrut \\
+\hline
+\multicolumn{5}{c}{} \\
+\hline
+\multicolumn{5}{|c|}{\cellcolor[gray]{0.8}\textbf{\category Wędrówki}} \\
+\hline
+\hline
+\problem & Podział na grupy & \emph{Czy obóz w~trakcie wędrówki jest podzielony na mniejsze grupy? Jeśli tak to ustalić kryteria podziału.} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Jak liczne są grupy i~jaka jest liczba instruktorów (opiekunów) w~każdej z~nich?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy w~każdej grupie jest doświadczona osoba prowadząca, znająca się na mapie i~potrafiąca się poruszać po szlaku?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Kto z~kadry idzie z~najsłabszymi, czy i~jak ich motywuje, podtrzymuje na duchu, o~czym rozmawia itd?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Zwrócić uwagę na wspólne wyposażenie każdej z grup, np.: sprawdzić czy każda grupa ma odpowiednią mapę, apteczkę, telefon komórkowy lub UKF, itp. i~wymienić ewentualne braki.} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Świadomość trasy i~celu} & \emph{Czy każda grupa wie którędy i~dokąd ma iść, jechać lub płynąć?} & & \\
+\hline
+\problem & \RaggedRight{Rozkład grup w~czasie} & \emph{Jakie są odstępy w~czasie między grupami?} & & \\
+\cline{3-5}
+ & & \emph{Czy grupy spotykają się na szlaku? Jeśli tak, to ustalić jak często.} & & \\
+\hline
+\problem & \RaggedRight{Przerwy} & \emph{Czy są przerwy w~trakcie wędrówek? Jeśli są to sprawdzić: ile ich jest, jak długie, jak często, czy czołówka czeka na peleton i~maruderów.} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Długość wędrówek} & \emph{Ile codziennie czasu zajmują wędrówki, ile dziennie jest ,,zdobywanych'' punktów GOT, TOK, KOT itp. za wędrówki, ewentualnie ile kilometrów?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy trasa jest odpowiednia do możliwości drużyny?} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Formacja na szlaku} & \emph{W~jakim szyku każda grupa porusza się po szlaku? Jeśli brak słów to zrobić rysunek\ldots} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Wygląd na szlaku} & \emph{Jak uczestnicy są ubrani w~trakcie wędrówek?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy mają jednolite stroje (inne niż mundury)?} & & \\
+\cline{3-5}
+ & & \emph{Czy wyglądają jak zorganizowana ekipa czy jak luźna grupa turystów?} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Kondycja uczestników} & \emph{Czy uczestnicy zostali przygotowani kondycyjnie do obozu i~czy widać tego efekty? Zrobić szybką ewaluację zastosowanych technik i~ich rezultatów.} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy były jakieś incydenty w~związku ze słabą kondycją, osłabieniem, itp.} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Koniecznie sprawdzić czy uczestnicy nie są wycieńczeni. Sprawdzić czy nie skarżą się na zmęczenie i~brak odpoczynku. Jeśli tak --- wniknąć głębiej w~zagadnienie i~zasugerować odpowiednie zmiany w~harmonogramie.} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Lista ekwipunku} & \emph{Czy każdy uczestnik (lub jego rodzice) otrzymał odpowiednio wcześnie przed obozem listę ekwipunku wymaganego na obozie?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy kadra nadzorowała i~wspomagała ewentualne zakupy, np. wspólny wyjazd do sklepu, negocjacje zniżek itp?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy przed wyjazdem na obóz plecaki (sakwy rowerowe) były ważone a~ich zawartość sprawdzana według listy ekwipunku?} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Ekwipunek uczestnika} & \emph{Czy każdy uczestnik obozu jest właściwie wyekwipowany w~porządne, odpowiednio dobrane i~dopasowane: plecak (sakwę, worek), buty, kurtkę, śpiwór a~także stosowną odzież i~sprzęt wymagany na obozie danego typu?} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Plecaki} & \emph{Zwrócić uwagę na ciężar plecaków (sakw rowerowych), czy dostosowany jest do wieku i~masy ,,nosiciela''.} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy plecaki (sakwy rowerowe) są właściwie spakowane (czy wszystkie rzeczy są wewnątrz, czy coś jest na zewnątrz)?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy plecaki (sakwy rowerowe) są prawidłowo zapięte tak, że nie otwierają się w~trakcie wędrówki (jazdy)?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy uczestnicy byli uczeni prawidłowego pakowania plecaków?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Sprawdzić czy szelki są właściwie wyregulowane tak, że plecaki nie ,,wiszą'' za nisko, czy pasy biodrowe i~piersiowe są wyregulowane i~zapięte.} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy uczestnicy posiadają pokrowce przeciwdeszczowe na plecaki, sprawdzić czy zawartość plecaka (sakwy, worka) jest zabezpieczona przez zamoczeniem, zwłaszcza na spływie.} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy wędrówki są z~plecakami? Jeśli nie, to ustalić w~jaki sposób plecaki trafiają do kolejnego miejsca zakwaterowania?} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Ubiór} & \emph{Czy ubiór uczestników jest odpowiedni w~danym momencie, np. w~czasie deszczu czy mają nałożone kurtki; gdy jest bardzo zimno czy nie chodzą w~krótkich spodenkach; gdy słońce praży czy mają nakrycie głowy, nie chodzą w~koszulkach bez rękawków i~używają kremów z~dużym filtrem UV (chodzi o~oparzenia słoneczne); na spływie kajakowym --- czy mają nałożone kamizelki ratunkowe, rękawiczki ochronne; na obozie rowerowym --- czy mają kaski, ochraniacze, rękawiczki itd?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Ocenić czy kadra daje odpowiedni przykład i~kontroluje ubiór uczestników.} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Gitara} & \emph{Jeśli na obozie jest gitara lub inny instrument wykorzystywany podczas ognisk, to w~jaki sposób jest ona transportowana do kolejnego miejsca zakwaterowania? Kto nosi gitarę, czy jest ona przytroczona do plecaka, czy niesiona w ręku?} & & \tstrut \\
+\hline
+\multicolumn{5}{c}{} \\
+\hline
+\multicolumn{5}{|c|}{\cellcolor[gray]{0.8}\textbf{\category Bezpieczeństwo}} \\
+\hline
+\hline
+\problem & \RaggedRight{Telefony alarmowe} & \emph{Sprawdzić czy kadrze znany jest numer ratunkowy GOPR, TOPR, WOPR --- odpowiednio dla typu obozu.} & & \\
+\hline
+\problem & \RaggedRight{Telefony kontaktowe} & \emph{Sprawdzić czy kontaktowe numery telefonów kadry, podane w~kartach obozowych, działają i~w jakich godzinach. Czy do ,,obozu'' można się dodzwonić w~nocy czy nie, bo wszystkie telefony są wyłączone, wyciszone itp. Chodzi o~możliwość kontaktu w~nagłych sytuacjach, np. losowych.} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Przestrzeganie wyznaczonej trasy} & \emph{Czy obóz przestrzega wyznaczonej i~zatwierdzonej trasy? Czy w~dniu wizytacji znajduje się tam gdzie powinien?} & & \\
+\hline
+\problem & \RaggedRight{Znajomość regulaminów przez uczestników} & \emph{Czy regulaminy są podpisane przez kadrę i~uczestników? Sprawdzić wyrywkowo znajomość zasad określonych w~tych regulaminach.} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Apteczki} & \emph{Ile jest apteczek? Czy każda grupa ma apteczkę?} & & \\
+\cline{3-5}
+ & & \emph{Czy jest jakaś apteczka ,,główna''? Czym się różni od pozostałych?} & & \\
+\cline{3-5}
+ & & \emph{Czy apteczki wszystkich grup zawierają podstawowe materiały opatrunkowe i~środki dezynfekcyjne?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy są zabezpieczone przed zamoknięciem?} & & \\
+\cline{3-5}
+ & & \emph{Kto przygotowywał i~kompletował wyposażenie apteczek?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Ocenić w~jakim są stanie (np. bałagan --- porządek, brudne --- czyste).} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Wyciąg z~kart obozowych} & \emph{Czy kadra posiada wyciąg informacji z~kart obozowych m.~in. o~uczuleniach, przyjmowanych stale lekach itd?} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Karta zabiegów i~urazów} & \emph{Czy jest i~czy jest wypełniona?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Sprawdzić czy coś z~apteczki zostało wydane lub (z)użyte w~tym kontekście.} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy były poważne incydenty skutkujące wizytą u~lekarza lub pobytem w szpitalu?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy powiadomiono rodziców w~kontekście tych incydentów?} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Kadra kwalifikowana} & \emph{Czy na obozie jest zatrudniona kadra kwalifikowana, np. przewodnik górski, ratownik WOPR, instruktor wspinaczki?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy osoby te są obecne na obozie codziennie (np. przewodnik górski może pojawiać się tylko na trasach powyżej 1000 m.n.p.m.)?} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Pogoda} & \emph{Czy kadra wie jak się zachować w~czasie burzy (zwłaszcza w~górach) lub powodzi (zwłaszcza na spływie)?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy sprawdzana jest codziennie prognoza pogody dla obozu (w~profesjonalnym serwisie pogodowym)?} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Sprzęt do oznaczania kolumny w~marszu} & \emph{Czy obóz jest wyposażony w~chorągiewki białą i~żółtą, latarkę białą i~czerwoną, kamizelki odblaskowe? Czy są one używane?} & & \tstrut \\
+\hline
+\multicolumn{5}{c}{} \\
+\hline
+\multicolumn{5}{|c|}{\cellcolor[gray]{0.8}\textbf{\category Dzień obozowy}} \\
+\hline
+\hline
+\problem & \RaggedRight{Rozkład dnia} & \emph{Czy zaplanowany rozkład dnia jest przestrzegany?} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Powitanie dnia} & \emph{Jak wygląda pobudka?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy jest obrzędowe powitanie dnia i~inne obrzędy?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy jest zaprawa poranna i~ile trwa?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy całość jest przeprowadzana na odpowiednim poziomie?} & & \tstrut \\
+\hline
+\multicolumn{5}{c}{\tstrut} \\
+\multicolumn{5}{c}{\tstrut} \\
+\multicolumn{5}{c}{\tstrut} \\
+\hline
+\problem & \RaggedRight{Apel} & \emph{Czy jest apel? O~której godzinie i~czy miejsce było odpowiednie?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy harcerze są w~mundurach lub innych jednolitych strojach?} & & \\
+\cline{3-5}
+ & & \emph{Czy jest odczytywany rozkaz i~czy są w~nim zawarte sensowne informacje dotyczące planów na dany dzień?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Ocenić jak wypadła musztra i~ogólnie przebieg apelu.} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Sprawność przygotowań} & \emph{Czy przygotowania do wymarszu są przeprowadzane sprawnie i~czy każdy wie co ma robić? Kto kontroluje? Ile czasu zajmują? Co w tym czasie robi każda osoba z~kadry?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy obóz wychodzi wcześnie na szlak by uniknąć burzy w~górach (która latem najczęściej jest popołudniu), aby dotrzeć do celu i~zakwaterować się zanim zacznie się ściemniać?} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Sprawność na szlaku} & \emph{Czy tempo jest odpowiednie do wieku uczestników i~zgodne z planem wędrówki?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy obóz ,,w~marszu na szlaku'' wygląda porządnie czy beznadziejnie?} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Wędrowanie} & \emph{Czy w~trakcie wędrówki dzieje się coś ponad samo wędrowanie, np. jakieś interesujące zajęcia, albo krótka wizyta w~ciekawym miejscu?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy drużynowi wykorzystują ten czas na rozmowy i~formatowanie uczestników?} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Sprawność kwaterunkowa} & \emph{Jak wygląda sposób i~sprawność zakwaterowania obozu po przybyciu na miejsce noclegu?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Ile to trwa? Kto kieruje? Co w tym czasie robi każda osoba z~kadry?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{W~przypadku noclegu w~namiotach ocenić umiejętności rozstawiania.} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Czas na pranie odzieży i~konserwację wyposażenia} & \emph{Czy jest wyznaczony osobny czas kiedy uczestnicy obozu mogą wyprać ubrania po wędrówce (np. skarpety), umyć i~zaimpregnować buty, wyczyścić inny sprzęt (np. rowery, kajaki)?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy tego czasu jest wystarczająco dużo, tzn. czy każdy uczestnik ma szansę zdążyć?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy ten czas jest wykorzystywany zgodnie z~intencją, tzn. czy faktycznie odzież jest wyprana, buty umyte a~sprzęt wyczyszczony?} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Czas wolny} & \emph{Czy istnieje tzw. czas wolny dla uczestników obozu? Jeśli tak, to ustalić ile trwa i~co właściwie uczestnicy wtedy robią.} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Ognisko} & \emph{Czy są ogniska (ewentualnie kominki) i~ile trwają?} & & \\
+\cline{3-5}
+ & & \emph{Czy są przygotowane i~prowadzone sprawnie czy chaotycznie i~na żywioł?} & & \\
+\cline{3-5}
+ & & \emph{Czy grano na gitarze lub innym instrumencie?} & & \\
+\cline{3-5}
+ & & \emph{Czy są sensowne gawędy i~kto je przygotowuje i~wygłasza?} & & \\
+\hline
+\problem & \RaggedRight{Zakończenie dnia} & \emph{Czy jest obrzędowe zakończenie dnia?} & & \\
+\cline{3-5}
+ & & \emph{Czy są inne obrzędy? Jakie?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Czy całość jest przeprowadzana na odpowiednim poziomie?} & & \tstrut \\
+\hline
+\problem & \RaggedRight{Rada obozu} & \emph{Jak często się zbiera rada obozu, gdzie i~kiedy?} & & \tstrut \\
+\cline{3-5}
+ & & \emph{Kto zwołuje i~prowadzi?} & & \tstrut \\
+\hline
+\multicolumn{5}{c}{} \\
+\hline
+\multicolumn{5}{|c|}{\cellcolor[gray]{0.8}\textbf{\category Ogólna ocena obozu}} \\
+\hline
+\hline
+\multicolumn{5}{|p{17cm}|}{\rule[-42pt]{0cm}{52pt}} \\
+\hline
+\multicolumn{5}{c}{} \\
+\hline
+\multicolumn{5}{|c|}{\cellcolor[gray]{0.8}\textbf{\category Uwagi komendanta i~kadry obozu}} \\
+\hline
+\hline
+\multicolumn{5}{|p{17cm}|}{\rule[-42pt]{0cm}{172pt}} \\
+\hline
+\multicolumn{5}{c}{} \\
+\multicolumn{5}{@{}p{17cm}@{}}{
+\begin{tabular}{|p{8.505cm}|p{8.505cm}|}
+\hline
+\multicolumn{1}{|c|}{\cellcolor[gray]{0.8}\textbf{Podpis wizytatora}} & \multicolumn{1}{|c|}{\cellcolor[gray]{0.8}\textbf{Podpis komendanta}} \\
+\hline
+\tstrut & \\
+\end{tabular}
+} \\
+%\hline
+\end{xtabular}
+
+% \mainmatter
+\end{document}
+\bye
+%
+%%%
+% Document ends.
+%%%
